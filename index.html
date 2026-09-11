@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Reviewer</title>
+    <!-- Fontshare API -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700&f[]=satoshi@500,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="sticky-nav">
+        <div class="nav-content">
+            <div class="brand">EXAM_REVIEWER</div>
+            <div class="nav-links">
+                <a href="#philosophy">Philosophy</a>
+                <a href="#showcase">Showcase</a>
+            </div>
+            <a href="#download" class="contact-btn">Get the App</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (ECHO STACK) -->
+    <section class="hero">
+        <div class="echo-container">
+            <div class="echo-layer layer-5">MASTER</div>
+            <div class="echo-layer layer-4">MASTER</div>
+            <div class="echo-layer layer-3">MASTER</div>
+            <div class="echo-layer layer-2">MASTER</div>
+            <div class="echo-layer layer-1">MASTER</div>
+        </div>
+        <div class="hero-subtitle">
+            <p>A brutalist, distraction-free environment engineered for rapid knowledge retention and spaced repetition mastery.</p>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY / NARRATIVE SECTION -->
+    <section id="philosophy" class="philosophy">
+        <div class="vertical-divider"></div>
+        <h2 class="quote">
+            Mastery through <span class="italic-serif">repetition</span>.
+        </h2>
+        
+        <div class="features-grid">
+            <div class="feature-col">
+                <h3>Flashcard Mastery</h3>
+                <p>Spaced repetition algorithms disguised as an elegant UI. Mark cards as known, or cycle them back into your deck until mastered.</p>
+            </div>
+            <div class="feature-col">
+                <h3>Sudden Death</h3>
+                <p>A high-stakes mode for true experts. One mistake ends the session. Prove you know the material flawlessly.</p>
+            </div>
+            <div class="feature-col">
+                <h3>Limitless Themes</h3>
+                <p>Over a dozen carefully curated color palettes, typography options, and customizable glassmorphic backgrounds.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASYMMETRICAL SHOWCASE GRID -->
+    <section id="showcase" class="showcase">
+        <div class="showcase-grid">
+            <!-- 1. Large 8-col rectangle -->
+            <div class="showcase-item grid-8-col rounded-sm">
+                <img src="assets/app-1.png" alt="Desktop App Interface" class="showcase-img" id="img-desktop">
+                <div class="overlay-text">Desktop Environment</div>
+            </div>
+            <!-- 2. Vertical 4-col pill -->
+            <div class="showcase-item grid-4-col pill-shape">
+                <img src="assets/app-2.png" alt="Mobile App Interface" class="showcase-img" id="img-mobile">
+                <div class="circular-overlay">Mobile</div>
+            </div>
+            <!-- 3. Circular 5-col -->
+            <div class="showcase-item grid-5-col circle-shape">
+                <img src="assets/app-3.png" alt="Flashcard Mode" class="showcase-img" id="img-flashcard">
+                <div class="overlay-text">Flashcard Mode</div>
+            </div>
+            <!-- 4. Wide 7-col rectangle -->
+            <div class="showcase-item grid-7-col rounded-sm">
+                <img src="assets/app-4.png" alt="Settings Panel" class="showcase-img" id="img-settings">
+                <div class="overlay-text">Aesthetic Control</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BESPOKE SERVICE CARDS (DOWNLOAD) -->
+    <section id="download" class="download-section">
+        <h2 class="section-title">Acquisition</h2>
+        <div class="download-grid">
+            <a href="downloads/Exam-Reviewer-Setup.exe" download="Exam-Reviewer-Setup.exe" class="download-card">
+                <div class="icon-container">
+                    <i data-lucide="monitor"></i>
+                </div>
+                <h3>Windows / Mac</h3>
+                <p>Download the standalone desktop application.</p>
+                <div class="cta-line">
+                    <span>Download Desktop</span>
+                    <i data-lucide="arrow-right"></i>
+                </div>
+            </a>
+
+            <a href="downloads/exam-reviewer.apk" download="exam-reviewer.apk" class="download-card">
+                <div class="icon-container">
+                    <i data-lucide="smartphone"></i>
+                </div>
+                <h3>Android APK</h3>
+                <p>Install natively on your Android device.</p>
+                <div class="cta-line">
+                    <span>Download Mobile</span>
+                    <i data-lucide="arrow-right"></i>
+                </div>
+            </a>
+            
+            <a href="https://yourwebsite.com/app" target="_blank" class="download-card">
+                <div class="icon-container">
+                    <i data-lucide="globe"></i>
+                </div>
+                <h3>Web Platform</h3>
+                <p>Access the progressive web app anywhere.</p>
+                <div class="cta-line">
+                    <span>Open Web App</span>
+                    <i data-lucide="arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>EXAM_REVIEWER</h3>
+                <p>Minimalist knowledge retention.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="#philosophy">Philosophy</a>
+                <a href="#showcase">Showcase</a>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <a href="#download">Desktop</a>
+                <a href="#download">Mobile</a>
+                <a href="#download">Web</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <i data-lucide="github"></i>
+                    <i data-lucide="twitter"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>

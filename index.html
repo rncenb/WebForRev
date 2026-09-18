@@ -1,165 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Reviewer</title>
-    <!-- Fontshare API -->
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700&f[]=satoshi@500,700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Reviewer — Study that remembers</title>
+<meta name="description" content="A flashcard and spaced-repetition app for exam season. Organize every subject by term, drill with Sudden Death mode, and make it look like yours. Free for desktop, Android, and web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2312151B'/%3E%3Crect x='24' y='30' width='40' height='28' rx='3' fill='%23F2B33D'/%3E%3Crect x='34' y='42' width='42' height='28' rx='3' fill='%23F4EEDD'/%3E%3C/svg%3E">
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="sticky-nav">
-        <div class="nav-content">
-            <div class="brand">EXAM_REVIEWER</div>
-            <div class="nav-links">
-                <a href="#philosophy">Philosophy</a>
-                <a href="#showcase">Showcase</a>
-            </div>
-            <a href="#download" class="contact-btn">Get the App</a>
-        </div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26">
+          <rect x="6" y="9" width="16" height="12" rx="1.5" fill="var(--highlighter)"/>
+          <rect x="11" y="14" width="16" height="12" rx="1.5" fill="var(--paper)"/>
+        </svg>
+      </span>
+      Exam Reviewer
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#modes">Modes</a>
+      <a href="#tour">Tour</a>
+      <a href="#download">Download</a>
     </nav>
+    <a href="#download" class="btn btn-small">Get the app</a>
+  </div>
+</header>
 
-    <!-- HERO SECTION (ECHO STACK) -->
-    <section class="hero">
-        <div class="echo-container">
-            <div class="echo-layer layer-5">MASTER</div>
-            <div class="echo-layer layer-4">MASTER</div>
-            <div class="echo-layer layer-3">MASTER</div>
-            <div class="echo-layer layer-2">MASTER</div>
-            <div class="echo-layer layer-1">MASTER</div>
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Flashcards &amp; spaced repetition</p>
+        <h1>Study that<br>remembers<span class="hero-dot">.</span></h1>
+        <p class="hero-sub">Drop in your handouts, split them by Prelims through Finals, and drill until the answer comes before the question finishes. No account, no ads, no algorithm deciding what you see next — just your material, reviewed until it sticks.</p>
+        <div class="hero-actions">
+          <a href="#download" class="btn btn-primary">Get the app</a>
+          <a href="#tour" class="btn btn-ghost">See how it works</a>
         </div>
-        <div class="hero-subtitle">
-            <p>A brutalist, distraction-free environment engineered for rapid knowledge retention and spaced repetition mastery.</p>
+      </div>
+
+      <div class="hero-deck" aria-hidden="true">
+        <div class="deck-card deck-back"></div>
+        <div class="deck-card deck-mid"></div>
+        <div class="flip-card" id="flipCard">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <span class="card-label">Prelims · Cell Biology</span>
+              <p class="card-question">What organelle produces most of a cell's ATP?</p>
+              <span class="card-hint">Tap to flip</span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="card-label">Answer</span>
+              <p class="card-answer">The mitochondrion</p>
+              <span class="card-hint">Known it? Mark it mastered.</span>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- PHILOSOPHY / NARRATIVE SECTION -->
-    <section id="philosophy" class="philosophy">
-        <div class="vertical-divider"></div>
-        <h2 class="quote">
-            Mastery through <span class="italic-serif">repetition</span>.
-        </h2>
-        
-        <div class="features-grid">
-            <div class="feature-col">
-                <h3>Flashcard Mastery</h3>
-                <p>Spaced repetition algorithms disguised as an elegant UI. Mark cards as known, or cycle them back into your deck until mastered.</p>
-            </div>
-            <div class="feature-col">
-                <h3>Sudden Death</h3>
-                <p>A high-stakes mode for true experts. One mistake ends the session. Prove you know the material flawlessly.</p>
-            </div>
-            <div class="feature-col">
-                <h3>Limitless Themes</h3>
-                <p>Over a dozen carefully curated color palettes, typography options, and customizable glassmorphic backgrounds.</p>
-            </div>
+  <!-- MODES -->
+  <section class="modes" id="modes">
+    <div class="section-inner">
+      <h2>Three ways to review, one deck</h2>
+      <p class="section-sub">Every subject you build gets all three modes for free. Switch depending on how much time you have, or how much you trust yourself.</p>
+
+      <div class="modes-grid">
+        <article class="mode-card mode-blue">
+          <h3>Standard Session</h3>
+          <p>Work straight through your deck at your own pace. Wrong answers get shuffled back in until you clear the whole set.</p>
+          <span class="mode-tag">Play until finish</span>
+        </article>
+        <article class="mode-card mode-coral">
+          <h3>Sudden Death</h3>
+          <p>One wrong answer ends the run. Built for the night before the exam, when you need to know for certain, not just mostly.</p>
+          <span class="mode-tag">One mistake, game over</span>
+        </article>
+        <article class="mode-card mode-violet">
+          <h3>Flashcard Challenge</h3>
+          <p>Self-graded and unhurried. Flip each card, decide honestly if you knew it, and let mastered cards drop out of the deck.</p>
+          <span class="mode-tag">Mastery mode</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TOUR -->
+  <section class="tour" id="tour">
+    <div class="section-inner">
+
+      <div class="tour-row">
+        <div class="tour-copy">
+          <p class="eyebrow">Your syllabus, organized</p>
+          <h2>Every term in its own tab</h2>
+          <p>Handouts sort into Prelims, Midterms, Pre-Finals, and Finals automatically, so you're never studying last month's material by accident. Add a subject, drop in a handout, and launch an exam in under a minute.</p>
         </div>
-    </section>
-
-    <!-- ASYMMETRICAL SHOWCASE GRID -->
-    <section id="showcase" class="showcase">
-        <div class="showcase-grid">
-            <!-- 1. Large 8-col rectangle -->
-            <div class="showcase-item grid-8-col rounded-sm">
-                <img src="assets/app-1.png" alt="Desktop App Interface" class="showcase-img" id="img-desktop">
-                <div class="overlay-text">Desktop Environment</div>
+        <div class="tour-visual">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
             </div>
-            <!-- 2. Vertical 4-col pill -->
-            <div class="showcase-item grid-4-col pill-shape">
-                <img src="assets/app-2.png" alt="Mobile App Interface" class="showcase-img" id="img-mobile">
-                <div class="circular-overlay">Mobile</div>
-            </div>
-            <!-- 3. Circular 5-col -->
-            <div class="showcase-item grid-5-col circle-shape">
-                <img src="assets/app-3.png" alt="Flashcard Mode" class="showcase-img" id="img-flashcard">
-                <div class="overlay-text">Flashcard Mode</div>
-            </div>
-            <!-- 4. Wide 7-col rectangle -->
-            <div class="showcase-item grid-7-col rounded-sm">
-                <img src="assets/app-4.png" alt="Settings Panel" class="showcase-img" id="img-settings">
-                <div class="overlay-text">Aesthetic Control</div>
-            </div>
+            <img src="assets/app-1.png" alt="Exam Reviewer desktop dashboard showing subject tabs for Prelims through Finals, an active-modules list, and three exam launch options." loading="lazy">
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- BESPOKE SERVICE CARDS (DOWNLOAD) -->
-    <section id="download" class="download-section">
-        <h2 class="section-title">Acquisition</h2>
-        <div class="download-grid">
-            <a href="downloads/Exam-Reviewer-Setup.exe" download="Exam-Reviewer-Setup.exe" class="download-card">
-                <div class="icon-container">
-                    <i data-lucide="monitor"></i>
-                </div>
-                <h3>Windows / Mac</h3>
-                <p>Download the standalone desktop application.</p>
-                <div class="cta-line">
-                    <span>Download Desktop</span>
-                    <i data-lucide="arrow-right"></i>
-                </div>
-            </a>
-
-            <a href="downloads/exam-reviewer.apk" download="exam-reviewer.apk" class="download-card">
-                <div class="icon-container">
-                    <i data-lucide="smartphone"></i>
-                </div>
-                <h3>Android APK</h3>
-                <p>Install natively on your Android device.</p>
-                <div class="cta-line">
-                    <span>Download Mobile</span>
-                    <i data-lucide="arrow-right"></i>
-                </div>
-            </a>
-            
-            <a href="https://yourwebsite.com/app" target="_blank" class="download-card">
-                <div class="icon-container">
-                    <i data-lucide="globe"></i>
-                </div>
-                <h3>Web Platform</h3>
-                <p>Access the progressive web app anywhere.</p>
-                <div class="cta-line">
-                    <span>Open Web App</span>
-                    <i data-lucide="arrow-right"></i>
-                </div>
-            </a>
+      <div class="tour-row tour-reverse">
+        <div class="tour-copy">
+          <p class="eyebrow">Make it yours</p>
+          <h2>Themes down to the pixel</h2>
+          <p>Pick an accent color, a font, a background texture, even a custom wallpaper behind the panels — then dial the panel opacity until it feels like your desk, not a template.</p>
         </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>EXAM_REVIEWER</h3>
-                <p>Minimalist knowledge retention.</p>
+        <div class="tour-visual">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
             </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <a href="#philosophy">Philosophy</a>
-                <a href="#showcase">Showcase</a>
-            </div>
-            <div class="footer-links">
-                <h4>Platform</h4>
-                <a href="#download">Desktop</a>
-                <a href="#download">Mobile</a>
-                <a href="#download">Web</a>
-            </div>
-            <div class="footer-social">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <i data-lucide="github"></i>
-                    <i data-lucide="twitter"></i>
-                </div>
-            </div>
+            <img src="assets/app-4.png" alt="Exam Reviewer settings panel with theme, accent color, and exam preferences including questions per session and shuffle toggle." loading="lazy">
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
-    <script>
-      lucide.createIcons();
-    </script>
+      <div class="tour-row">
+        <div class="tour-copy">
+          <p class="eyebrow">Take it with you</p>
+          <h2>The same deck, in your pocket</h2>
+          <p>Everything you build on desktop is ready on Android too, so a five-minute wait for the jeepney becomes five minutes of review instead of five minutes of scrolling.</p>
+        </div>
+        <div class="tour-visual tour-visual-phone">
+          <div class="phone-frame">
+            <img src="assets/app-2-crop.png" alt="Exam Reviewer's navigation menu on a mobile phone, listing High Scores, Study Guide, PDF Reader, and a subjects list." loading="lazy">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download-section" id="download">
+    <div class="section-inner">
+      <h2>Get Exam Reviewer</h2>
+      <p class="section-sub">Free to download. Your decks stay on your device — nothing is uploaded anywhere.</p>
+
+      <div class="download-grid">
+        <a href="downloads/Exam-Reviewer-Setup.exe" download="Exam-Reviewer-Setup.exe" class="download-card">
+          <span class="download-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </span>
+          <h3>Windows desktop</h3>
+          <p>Standalone installer, no store required.</p>
+          <span class="download-meta">Exam-Reviewer-Setup.exe · 85 MB</span>
+        </a>
+
+        <a href="downloads/exam-reviewer.apk" download="exam-reviewer.apk" class="download-card">
+          <span class="download-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </span>
+          <h3>Android</h3>
+          <p>Installs directly from the APK — allow unknown sources if asked.</p>
+          <span class="download-meta">exam-reviewer.apk · 4 MB</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="22" height="22">
+          <rect x="6" y="9" width="16" height="12" rx="1.5" fill="var(--highlighter)"/>
+          <rect x="11" y="14" width="16" height="12" rx="1.5" fill="var(--paper)"/>
+        </svg>
+      </span>
+      <div>
+        <p class="footer-title">Exam Reviewer</p>
+        <p class="footer-tag">Built for finals week, useful every week.</p>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#modes">Modes</a>
+      <a href="#tour">Tour</a>
+      <a href="#download">Download</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
